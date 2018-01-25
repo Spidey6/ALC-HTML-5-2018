@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Adventure Game</title>
+    </head>
+    <body>
+        <h1>Adventure Game v1.0</h1>
+        <p>Made by: Matthew Franco</p>
+        <script>
+            Start();
+            
+            function Start(){
+                
+                var playerName = prompt("What is your name Paladin?");
+                
+                alert("Welcome to G.E.A, the Galaxy Explorers Andromeda, " + playerName);
+                
+                var startGame = confirm("Are you ready to begin your adventure?");
+                
+                    if(startGame){
+                        Base();
+                    }
+                    else{
+                        alert("Goodbye!");
+                    }  
+                
+            } 
+            
+            function Base(){
+                var base = prompt("You arrive at the base of operations. There is a mission room, upgrade lab, lounge and shipyard").toLowerCase();
+                
+                switch(base){
+                        
+                    case "mission room":
+                        alert("The Vanguard have assigned you to patrol the planet io! You leave excited and determined.")
+                    break;
+                    case "upgrade lab":
+                        alert("you enter the Upgrade lab. The scientist asks what can he do for you? Get new weapon. Buy new gear. Get new powers to help in quest.")
+                    break;
+                    case "lounge":
+                        alert("you have entered the lounge. there is a couch. A food court. A Amory closet.")
+                    break;
+                    case "shipyard":
+                        alert("You walk to your starfox and enter it, your welcomed by Athena. Athena ask you where are we going today sir?")
+                    break;
+                    default:
+                        alert("I do not understand" + base);
+                    break;
+                           }
+            }
+            
+            
+        </script>
+    </body>
+</html>
