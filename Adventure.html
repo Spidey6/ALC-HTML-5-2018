@@ -7,22 +7,13 @@
         <h1>Adventure Game v1.0</h1>
         <p>Made by: Matthew Franco</p>
         <script>
-        //Inventory 
-           // var inventory {
-               // sword = 0;
-                //food = 0;
-                //blaster = 0;
-                //loot = 0;
-                //gernades = 0;
-           // }
-            
+            // Javascript object for an inventory
+            var inventory = {
+                coins:1000,
+                bread:0,
+                sword:0,
                 
-                
-                
-            
-            
-            
-            
+            }
             
             
             Start();
@@ -53,7 +44,14 @@
                         alert("The Vanguard have assigned you to patrol the planet io! You leave excited and determined.")
                     break;
                     case "upgrade lab":
-                        alert("you enter the Upgrade lab. The scientist asks what can he do for you? Get sword. Buy new gear. Get new powers to help in quest.")
+                        alert("you enter the Upgrade lab. The scientist asks what can he do for you? Get sword. Buy new gear. Get new powers to help in quest.");
+                        var upgradelab = prompt("what can I do for you? \n - sword \n - kinetic blast \n - blaster");
+                        if(upgradelab == "sword" || upgradelab == "buy sword" && inventory.coins >= 100){
+                            inventory.sword ++;
+                            alert("You own" +inventory.sword+" swords");
+                            inventory.coins = inventory.coins - 100;
+                            alert("you have"+inventory.coins+" coins remaining");
+                        }
                     break;
                     case "lounge":
                         alert("you have entered the lounge. there is a couch. A food court. A Armory closet.")
