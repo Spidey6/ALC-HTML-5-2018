@@ -12,7 +12,8 @@
                 coins:1000,
                 bread:0,
                 sword:0,
-                
+                kineticblast:0,
+                blaster:0,
             }
             
             
@@ -51,6 +52,18 @@
                             alert("You own" +inventory.sword+" swords");
                             inventory.coins = inventory.coins - 100;
                             alert("you have"+inventory.coins+" coins remaining");
+                        }
+                        if(upgradelab == "kinetic blast" || upgradelab == "buy kinetic blast" && inventory.coins >= 100){
+                            inventory.kineticblast ++;
+                            alert("You own "  +inventory.kineticblast+" kinetic Blasts");
+                            inventory.coins = inventory.coins - 100;
+                            alert("You have "+inventory.coins+" coins remaining");
+                        }
+                        if(upgradelab == "blaster" || upgradelab == "buy blaster" && inventory.coins >= 100){
+                            inventory.blaster ++;
+                            alert("You own " +inventory.blaster+" blasters");
+                            inventory.coins = inventory.coins - 100;
+                            alert("You have "+inventory.coins+" coins remaining");
                         }
                     break;
                     case "lounge":
