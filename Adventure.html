@@ -42,7 +42,8 @@
                 switch(base){
                         
                     case "mission room":
-                        alert("The Vanguard have assigned you to patrol the planet io! You leave excited and determined.")
+                        alert("The Vanguard have assigned you to patrol the planet IO! You leave excited and determined.");
+                        Base();
                     break;
                     case "upgrade lab":
                         alert("you enter the Upgrade lab. The scientist asks what can he do for you? Get sword. Buy new gear. Get new powers to help in quest.");
@@ -65,15 +66,19 @@
                             inventory.coins = inventory.coins - 100;
                             alert("You have "+inventory.coins+" coins remaining");
                         }
+                        Base();
                     break;
                     case "lounge":
                         alert("you have entered the lounge. there is a couch. A food court. A Armory closet.")
+                        Base();
                     break;
                     case "shipyard":
                         alert("You walk to your starfox and enter it, your welcomed by Athena. Athena ask you where are we going today sir?")
+                        Base();
                     break;
                     default:
                         alert("I do not understand" + base);
+                        Base();
                     break;
                            }
             }
