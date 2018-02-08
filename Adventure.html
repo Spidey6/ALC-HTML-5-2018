@@ -31,18 +31,26 @@
                         Base();
                     }
                     else{
+                        
                         alert("Goodbye!");
                     }  
                 
             } 
             
+            
+            
+            function invCheck(){
+                alert("Inside your Armory is:" + "\n coins: "+inventory.coins+"\n sword: "+inventory.sword+"\n kineticblast: "+inventory.kineticblast+"\n blaster: "+inventory.blaster);
+            }   
+            
+            
             function Base(){
-                var base = prompt("You arrive at the base of operations. There is a mission room, upgrade lab, lounge and shipyard").toLowerCase();
+                var base = prompt("You arrive at the base of operations. There is a mission room, upgrade lab, lounge and shipyard and the armory. the Moon IO").toLowerCase();
                 
                 switch(base){
                         
                     case "mission room":
-                        alert("The Vanguard have assigned you to patrol the planet IO! You leave excited and determined.");
+                        alert("The Vanguard have assigned you to patrol the moon IO! You leave excited and determined.");
                         Base();
                     break;
                     case "upgrade lab":
@@ -72,9 +80,18 @@
                         alert("you have entered the lounge. there is a couch. A food court. A Armory closet.")
                         Base();
                     break;
+                    case "armory":
+                        alert("you equip your personal armory. It holds the items you have collected.")
+                        invCheck();
+                        Base();
+                    break;
                     case "shipyard":
                         alert("You walk to your starfox and enter it, your welcomed by Athena. Athena ask you where are we going today sir?")
                         Base();
+                    break;
+                    case "io":
+                        alert("You travel in your starfox to the moon of jupiter, IO.")
+                        IO();
                     break;
                     default:
                         alert("I do not understand" + base);
@@ -82,6 +99,33 @@
                     break;
                            }
             }
+            
+            
+            function IO(){
+                var io = prompt("You have arrived on the Moon IO. Athena gives you a communicator so she can find you, if in trouble. You look at the landscape of IO. You see an outpost to the north. you see a tunnel of caverns to the east. And then you spot a base.").toLowerCase();
+                
+                switch(io){
+                        
+                    case "outpost":
+                        alert("You equip your energy sword to prepare, What you find is friendlies, Coloniel ThunderBolt explains why the base went dark and how they ended up here. He explains that the Symbiotic alien typhon has broken out of containment and has killed many of them!")
+                        IO();
+                    break;
+                         }
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             
         </script>
