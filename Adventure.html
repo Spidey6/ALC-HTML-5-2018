@@ -58,9 +58,9 @@
                         var upgradelab = prompt("what can I do for you? \n - sword \n - kinetic blast \n - blaster");
                         if(upgradelab == "sword" || upgradelab == "buy sword" && inventory.coins >= 100){
                             inventory.sword ++;
-                            alert("You own" +inventory.sword+" swords");
+                            alert("You own " +inventory.sword+" swords");
                             inventory.coins = inventory.coins - 100;
-                            alert("you have"+inventory.coins+" coins remaining");
+                            alert("you have "+inventory.coins+" coins remaining");
                         }
                         if(upgradelab == "kinetic blast" || upgradelab == "buy kinetic blast" && inventory.coins >= 100){
                             inventory.kineticblast ++;
@@ -110,6 +110,15 @@
                         alert("You equip your energy sword to prepare, What you find is friendlies, Coloniel ThunderBolt explains why the base went dark and how they ended up here. He explains that the Symbiotic alien typhon has broken out of containment and has killed many of them!")
                         IO();
                     break;
+                    case "caverns":
+                        alert("You enter the tunnel and found a hole in the ground leading down into a underground lair.")
+                        IO();
+                    break;
+                    case "base":
+                        alert("You walk up to the base where you find everything in shambles. You walk in with your blaster at the ready. You find the main lab, the blueprints to the station, and a computer.")
+                        IO();
+                    break;
+                        
                          }
             }
             
