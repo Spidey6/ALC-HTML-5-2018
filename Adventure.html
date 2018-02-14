@@ -39,13 +39,13 @@
             
             
             
-            function invCheck(){
+            var invList = function(){
                 alert("Inside your Armory is:" + "\n coins: "+inventory.coins+"\n sword: "+inventory.sword+"\n kineticblast: "+inventory.kineticblast+"\n blaster: "+inventory.blaster);
             }   
             
             
             function Base(){
-                var base = prompt("You arrive at the base of operations. There is a mission room, upgrade lab, lounge and shipyard and the armory. the Moon IO").toLowerCase();
+                var base = prompt("You arrive at the base of operations. There is a mission room, upgrade lab, lounge and shipyard and the inventory.the Moon IO").toLowerCase();
                 
                 switch(base){
                         
@@ -80,11 +80,6 @@
                         alert("you have entered the lounge. there is a couch. A food court. A Armory closet.")
                         Base();
                     break;
-                    case "armory":
-                        alert("you equip your personal armory. It holds the items you have collected.")
-                        invCheck();
-                        Base();
-                    break;
                     case "shipyard":
                         alert("You walk to your starfox and enter it, your welcomed by Athena. Athena ask you where are we going today sir?")
                         Base();
@@ -97,6 +92,12 @@
                         alert("I do not understand" + base);
                         Base();
                     break;
+                    case"inventory":
+                        alert(base=="inventory"||base=="show inventory")
+                        invList();
+                        Base();
+                    break;
+                           
                            }
             }
             
