@@ -39,7 +39,7 @@
             
             
             
-            var invList = function(){
+            function invCheck(){
                 alert("Inside your Armory is:" + "\n coins: "+inventory.coins+"\n sword: "+inventory.sword+"\n kineticblast: "+inventory.kineticblast+"\n blaster: "+inventory.blaster);
             }   
             
@@ -93,8 +93,8 @@
                         Base();
                     break;
                     case"inventory":
-                        alert(base=="inventory"||base=="show inventory")
-                        invList();
+                        alert("your inventory consist of: ")
+                        invCheck();
                         Base();
                     break;
                            
@@ -103,12 +103,35 @@
             
             
             function IO(){
-                var io = prompt("You have arrived on the Moon IO. Athena gives you a communicator so she can find you, if in trouble. You look at the landscape of IO. You see an outpost to the north. you see a tunnel of caverns to the east. And then you spot a base.").toLowerCase();
+                var io = prompt("You have arrived on the Moon IO. Athena gives you a communicator so she can find you, if in trouble. You look at the landscape of IO. You see an outpost to the north. you see a tunnel of caverns to the east. And then you spot a base. To be prepared, you check your inventory.").toLowerCase();
                 
                 switch(io){
                         
                     case "outpost":
-                        alert("You equip your energy sword to prepare, What you find is friendlies, Coloniel ThunderBolt explains why the base went dark and how they ended up here. He explains that the Symbiotic alien typhon has broken out of containment and has killed many of them!")
+                        alert("You equip your energy sword to prepare, What you find is friendlies, Coloniel ThunderBolt explains why the base went dark and how they ended up here. You ask.")
+                        Outpost();
+                        //Outpost questions
+                        function Outpost(){
+                            var outpostquestions = prompt("what happened here? \n - what happened \n - How long? \n - any more survivors? \n - leave?").toLowerCase();
+                        switch(outpostquestions){
+                            case "what happened":
+                                alert("We were studying some alien organism called the typhon, everything was going normal. Until one broken out of containment. By then, everything went to crap.")
+                                Outpost();
+                                break;
+                            case "how long":
+                                alert("It took us a full day to escape alive. those creatures kill without remorse. So we had to play it smart and hide.")
+                                Outpost();
+                                break;
+                            case "any survivors":
+                                alert("Before, we had an ARMY, but now we only have 12.")
+                                Outpost();
+                                break;
+                            case "leave":
+                                alert("Want to Leave?")
+                                IO();
+                                break;
+                                               }
+                        }
                         IO();
                     break;
                     case "caverns":
@@ -116,9 +139,34 @@
                         IO();
                     break;
                     case "base":
-                        alert("You walk up to the base where you find everything in shambles. You walk in with your blaster at the ready. You find the main lab, the blueprints to the station, and a computer.")
+                        alert("You walk up to the base where you find everything in shambles. You walk in with your blaster at the ready. You are confronted by the typhon.")
+                        Bases();
+                        function Bases(){
+                            var battlemode = prompt("fire blaster \n - fire blaster \n - energy sword \n - kinetic blast \n - the end").toLowerCase();
+                        switch(battlemode){
+                            case "fire blaster":
+                                alert(" you fire your blaster at the typhon. they reel back in pain, but still want to fight!")
+                                Bases();
+                                break;
+                            case "energy sword":
+                                alert("you get up close and personal with the typhon. you deliver a mighty blow. the typhon is almost down!")
+                                Bases();
+                                break;
+                            case "kinetic blast":
+                                alert("finally you unleash your ultimate attack, the kinetic blast. you pound the floor and everything start to fly!")
+                                Bases();
+                                break;
+                            case "the end":
+                                alert("You have successfully deafeated the typhon and freed IO. But young explorer, this is only a demo test. There will soon be more to come. But for now enjoy your victory!")
+                                break;
+                                         }
+                        }
                         IO();
                     break;
+                    case "inventory":
+                        alert("You check your personal armory.")
+                        invCheck();
+                        IO();
                         
                          }
             }
