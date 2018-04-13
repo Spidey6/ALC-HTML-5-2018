@@ -90,6 +90,7 @@
     function drawBricks() {
         for(c=0; c<brickColumnCount; c++) {
             for(r=0; r<brickRowCount; r++) {
+                if(bricks[c][r].status == 1){
                 var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
                 var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
                 bricks[c][r].x = brickX;
@@ -99,13 +100,14 @@
                 ctx.fillStyle = "#0095DD";
                 ctx.fill();
                 ctx.closePath();
-            }
+           }
         }
     }
+ }
     
     function collisionDetection() {
         for(c=0; c<brickColumnCount; c++){
-            for(r=0; r<bricksRowCount; r++){
+            for(r=0; r<brickRowCount; r++){
                 var b = bricks[c][r];
                 if(b.status == 1) {
                     if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight){
@@ -150,13 +152,13 @@
             if(x > paddleX && x < paddleX + paddleWidth){
                  dy = -dy;
             }
-            else if {
+            else  {
                 lives--;
                 if(!lives){
                 alert("GAME OVER");
                 document.location.reload();
                 }
-            }
+            
             else {
                 x = canvas.width/2;
                 y = canvas.height-30;
@@ -164,7 +166,7 @@
                 dy = -3;
                 paddleX = (canvas.width-paddleWidth)/2;
             }
-           
+          }
         }
         
         if(rightPressed && paddleX < canvas.width-paddleWidth){
@@ -180,7 +182,7 @@
     
    draw();
     
-    /*ctx.beginPath();
+    ctx.beginPath();
     ctx.rect(20, 40,50, 50);
     ctx.fillStyle = "#FF0000";
     ctx.fill();
@@ -196,7 +198,7 @@
     ctx.rect(160, 10, 100, 40);
     ctx.strokeStyle = "rgba(0, 0, 255, 0.5)";
     ctx.stroke();
-    ctx.closePath();*/
+    ctx.closePath();
 </script>
     
 </body>
